@@ -1,5 +1,6 @@
 <?php
 
+use App\Team;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -18,8 +19,14 @@ class PlayersTableSeeder extends Seeder
             DB::table('players')->insert([
                 'first_name' => Faker::create('lv_LV')->firstName,
                 'last_name' => Faker::create('lv_LV')->lastName,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at'=>Carbon::now()->format('Y-m-d H:i:s'),
+
             ]);
         }
+    }
+    private function getRandomUserId() {
+        $team = Team::all()->random();
+        return $team->id;
     }
 }
