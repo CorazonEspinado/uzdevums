@@ -1,10 +1,15 @@
 <template>
-    <h1>Test</h1>
+    <h1 v-if="message.length">{{message}}</h1>
 </template>
 
 <script>
     export default {
-        name: "FirstComponent"
+        name: "FirstComponent",
+        data() {
+            return {
+                message:'Laravel!!!!'
+            }
+        },
     }
 </script>
 

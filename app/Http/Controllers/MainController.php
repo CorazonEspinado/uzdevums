@@ -9,7 +9,7 @@ use App\Team;
 class MainController extends Controller
 {
     public function index() {
-        $teams=Team::find(1);
+        $teams=Team::all();
         return view('main');
     }
 }
