@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Player;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -29,7 +30,7 @@ class PlayerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,7 +41,7 @@ class PlayerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,19 +52,21 @@ class PlayerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $player = Player::find($id);
+        return view('partials.players.edit-player', compact('player'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -74,11 +77,14 @@ class PlayerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        Player::destroy($id);
+        return redirect()->route('main')->with('status',
+            'Player deleted!');
+
     }
 }
