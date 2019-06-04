@@ -17,7 +17,7 @@
                         <div class="tab-pane fade show active" id="nav-teams" role="tabpanel"
                              aria-labelledby="nav-home-tab">
                             <table class="table" cellspacing="0">
-                                @include('partials.teams.teams')
+                                @include('partials.teams')
                             </table>
                         </div>
                         <div class="tab-pane fade" id="nav-players" role="tabpanel" aria-labelledby="nav-profile-tab">

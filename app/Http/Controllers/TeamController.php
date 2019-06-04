@@ -52,7 +52,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        $teamInfo=Team::find($id);
+        $teamInfo = Team::find($id);
         return view('partials.teams.team-info', compact('teamInfo'));
 
     }
@@ -65,7 +65,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-       $team = Team::find($id);
+        $team = Team::find($id);
         return view('partials.teams.edit-team', compact('team'));
     }
 
@@ -81,8 +81,7 @@ class TeamController extends Controller
         $request->validate([
             'updated_team_name' => 'required|max:50',
         ]);
-        $teamUpdate = Team::find($request->team_id);
-        Team::where('id', $teamUpdate->id)
+        Team::where('id', $request->team_id)
             ->update([
                 'name' => $request->updated_team_name
             ]);

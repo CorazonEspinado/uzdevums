@@ -24,6 +24,7 @@
                                name="updated_team_name" placeholder="Team name" value="{{$team->name}}">
                         <input type="hidden" name="team_id" value="{{$team->id}}">
                     </div>
+
                     <button type="submit" class="btn btn-info">Submit</button>
                 </form>
             </div>

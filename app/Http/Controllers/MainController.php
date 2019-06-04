@@ -9,7 +9,7 @@ use Illuminate\Contracts\Pagination;
 class MainController extends Controller
 {
     public function index() {
-        $teams=Team::Paginate(10);
+        $teams=Team::all();
         return view('main', compact('teams'));
     }
 }

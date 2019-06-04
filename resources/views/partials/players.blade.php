@@ -1,6 +1,6 @@
 <table class="table" cellspacing="5">
     @if (Auth::user())
-        <a class="btn btn-success">New player</a>
+        <a class="btn btn-success" href="{{url('new-player')}}">New player</a>
     @endif
     <thead>
     <tr>
@@ -20,7 +20,7 @@
                 <td>{{$player->first_name}}</td>
                 <td>{{$player->last_name}}</td>
                 @if (Auth::user())
-                    <td><a class="btn btn-warning" href="{{url('edit', ['id'=>$player->id])}}">Edit</a>
+                    <td><a class="btn btn-warning" href="{{url('edit-player', ['id'=>$player->id])}}">Edit</a>
                         <a class="btn btn-danger" href="{{url('delete-player', ['id'=>$player->id])}}">Delete</a>
                     </td>
                 @endif

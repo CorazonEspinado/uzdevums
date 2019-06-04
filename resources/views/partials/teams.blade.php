@@ -5,7 +5,7 @@
     @endif
 <thead>
 <tr>
-    <th>Team id</th>
+    <th>Number of players in team</th>
     <th>Team name</th>
     <th>Creation date</th>
     @if (Auth::user())
@@ -16,7 +16,7 @@
 <tbody>
 @foreach ($teams as $team)
 <tr>
-<td>{{$team->id}}</td>
+<td>{{count($team->players)}}</td>
     <td>{{$team->name}}</td>
     <td>{{$team->created_at}}</td>
     @if (Auth::user())
@@ -30,4 +30,4 @@
 
 </tbody>
 </table>
-{{ $teams->links() }}
+

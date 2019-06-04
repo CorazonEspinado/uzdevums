@@ -24,4 +24,7 @@ Route::post('update-team', 'TeamController@update')->name('update-team');
 Route::get('team-info/{id}', 'TeamController@show')->name('team-info');
 Route::get('delete-player/{id}', 'PlayerController@destroy')->name('delete-player');
 Route::get('edit-player/{id}', 'PlayerController@edit')->name('edit-player');
+Route::post('update-player', 'PlayerController@update')->name('update-player');
+Route::get('new-player', 'PlayerController@create')->name('new-player');
+Route::post('store-new-player', 'PlayerController@store')->name('store-new-player');
 
