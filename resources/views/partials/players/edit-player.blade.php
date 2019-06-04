@@ -20,16 +20,16 @@
                 <form method="post" action="{{url('update-player')}}">
                     @csrf
                     <div class="form-group">
-                        <label for="team">Player info<span style="color: red">*</span> </label>
-                        <input type="text" class="form-control" id="player" aria-describedby="team"
-                               name="updated_player_first_name" placeholder="Team name" value="{{$player->first_name}}">
+                        <label for="player_first_name">Player first name<span style="color: red">*</span> </label>
+                        <input type="text" class="form-control" id="player_first_name" aria-describedby="team"
+                               name="updated_player_first_name" placeholder="First name" value="{{$player->first_name}}">
                         <input type="hidden" name="player_id" value="{{$player->id}}">
 
                     </div>
                     <div class="form-group">
-                        <label for="player">Team name<span style="color: red">*</span> </label>
-                        <input type="text" class="form-control" id="player" aria-describedby="team"
-                               name="updated_player_last_name" placeholder="Team name" value="{{$player->last_name}}">
+                        <label for="player_last_name">Player last name<span style="color: red">*</span> </label>
+                        <input type="text" class="form-control" id="player_last_name" aria-describedby="team"
+                               name="updated_player_last_name" placeholder="Last name" value="{{$player->last_name}}">
 
                     </div>
                     <div class="form-group">
